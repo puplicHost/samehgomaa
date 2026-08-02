@@ -972,5 +972,22 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/ramisharif.com\/wp-admin\
 })();
 </script>
 <!-- end Simple Custom CSS and JS -->
+
+<script>
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var out = [];
+    document.querySelectorAll('.elementor-element-e8d301c, .elementor-element-e8d301c .elementor-widget-image, .elementor-element-5370e43, .elementor-element-5370e43 .elementor-widget-image').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      var cls = el.className.split(' ').filter(function(c){return c.indexOf('elementor-element-') === 0;});
+      var img = el.querySelector('img');
+      var ir = img ? img.getBoundingClientRect() : null;
+      out.push((cls[1]||cls[0]) + ' | box ' + Math.round(r.top)+','+Math.round(r.left)+' '+Math.round(r.width)+'x'+Math.round(r.height) + (ir ? ' | img ' + Math.round(ir.width)+'x'+Math.round(ir.height) : '') + (el.classList.contains('elementor-hidden-tablet') ? ' [hidden-tablet]' : '') + (el.classList.contains('elementor-hidden-desktop') ? ' [hidden-desktop]' : ''));
+    });
+    var pre = document.createElement('pre'); pre.id = 'LAYOUT_TEST_OUT'; pre.textContent = out.join('\n');
+    document.body.appendChild(pre);
+  }, 1000);
+});
+</script>
 </body>
 </html>
