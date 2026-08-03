@@ -1278,5 +1278,36 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/ramisharif.com\/wp-admin\
 })();
 </script>
 <!-- end Simple Custom CSS and JS -->
+<script>
+(function () {
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+  ready(function () {
+    document.querySelectorAll('.elementor-accordion .elementor-tab-title').forEach(function (title) {
+      title.addEventListener('click', function () {
+        var item = title.closest('.elementor-accordion-item');
+        var content = item.querySelector('.elementor-tab-content');
+        var isActive = title.classList.contains('elementor-active');
+        item.parentNode.querySelectorAll('.elementor-accordion-item').forEach(function (other) {
+          var t = other.querySelector('.elementor-tab-title');
+          var tc = other.querySelector('.elementor-tab-content');
+          t.classList.remove('elementor-active');
+          t.setAttribute('aria-expanded', 'false');
+          tc.classList.remove('elementor-active');
+          tc.style.display = 'none';
+        });
+        if (!isActive) {
+          title.classList.add('elementor-active');
+          title.setAttribute('aria-expanded', 'true');
+          content.classList.add('elementor-active');
+          content.style.display = 'block';
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

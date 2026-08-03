@@ -972,22 +972,25 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/ramisharif.com\/wp-admin\
 })();
 </script>
 <!-- end Simple Custom CSS and JS -->
-
 <script>
-window.addEventListener('load', function(){
-  setTimeout(function(){
-    var out = [];
-    document.querySelectorAll('.elementor-element-e8d301c, .elementor-element-e8d301c .elementor-widget-image, .elementor-element-5370e43, .elementor-element-5370e43 .elementor-widget-image').forEach(function(el){
-      var r = el.getBoundingClientRect();
-      var cls = el.className.split(' ').filter(function(c){return c.indexOf('elementor-element-') === 0;});
-      var img = el.querySelector('img');
-      var ir = img ? img.getBoundingClientRect() : null;
-      out.push((cls[1]||cls[0]) + ' | box ' + Math.round(r.top)+','+Math.round(r.left)+' '+Math.round(r.width)+'x'+Math.round(r.height) + (ir ? ' | img ' + Math.round(ir.width)+'x'+Math.round(ir.height) : '') + (el.classList.contains('elementor-hidden-tablet') ? ' [hidden-tablet]' : '') + (el.classList.contains('elementor-hidden-desktop') ? ' [hidden-desktop]' : ''));
-    });
-    var pre = document.createElement('pre'); pre.id = 'LAYOUT_TEST_OUT'; pre.textContent = out.join('\n');
-    document.body.appendChild(pre);
-  }, 1000);
+window.addEventListener('DOMContentLoaded', function(){
+  function bar(y, x, color){ var b = document.createElement('div'); b.style.cssText = 'position:fixed;top:'+y+'px;left:'+x+'px;width:30px;height:30px;z-index:9999999;background:'+color+';'; document.body.appendChild(b); }
+  function row(y, n){ for (var i=0;i<12;i++){ bar(y, 100 + i*45, i < Math.min(12, n) ? '#000' : '#fff'); } }
+  var sec = document.querySelector('.elementor-element-e8d301c');
+  var sr = sec.getBoundingClientRect();
+  var imgs = document.querySelectorAll('img[src*="about-card"]');
+  var out = [];
+  for (var i=0;i<4;i++){
+    var r = imgs[i].getBoundingClientRect();
+    out.push('img'+(i+1)+' x='+Math.round(r.left)+' y='+Math.round(r.top)+' w='+Math.round(r.width)+' h='+Math.round(r.height));
+  }
+  out.push('sec y='+Math.round(sr.top)+' h='+Math.round(sr.height));
+  // encode page full height
+  row(10, Math.round((window.innerHeight + window.pageYOffset)/1000));
+  var t = document.createElement('div');
+  t.style.cssText = 'position:fixed;top:40px;left:0;width:100%;z-index:9999999;background:#fff;color:#000;font:16px monospace;padding:5px;direction:ltr;';
+  t.textContent = out.join(' || ');
+  document.body.appendChild(t);
 });
-</script>
-</body>
+</script></body>
 </html>
