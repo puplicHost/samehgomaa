@@ -27,3 +27,42 @@
         flex:0 0 calc(50% - 9.5px);
     }
 }
+/* --- services: our services images as grid (override) --- */
+.elementor-4779 .elementor-element.elementor-element-2c04e97{
+    flex-direction:row !important;
+    flex-wrap:wrap;
+    justify-content:center;
+    --flex-direction:row;
+    --flex-wrap:wrap;
+    gap:17px;
+}
+.elementor-4779 .elementor-element.elementor-element-2c04e97 > .elementor-widget-image{
+    width:calc(25% - 12.75px);
+    flex:0 0 calc(25% - 12.75px);
+    min-width:0;
+}
+.elementor-4779 .elementor-element.elementor-element-2c04e97 > .elementor-widget-image img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.08);
+}
+.elementor-4779 .elementor-element.elementor-element-2c04e97 > .elementor-element.elementor-element-88aeec6{
+    width:100%;
+    flex:0 0 100%;
+}
+@media(max-width:1024px){
+    .elementor-4779 .elementor-element.elementor-element-2c04e97 > .elementor-widget-image{
+        width:calc(33.333% - 11.33px);
+        flex:0 0 calc(33.333% - 11.33px);
+    }
+}
+@media(max-width:767px){
+    .elementor-4779 .elementor-element.elementor-element-2c04e97 > .elementor-widget-image{
+        width:calc(50% - 8.5px);
+        flex:0 0 calc(50% - 8.5px);
+    }
+}
