@@ -1,0 +1,42 @@
+[
+ {
+  "id": "srv1",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.28.18 PM.jpeg",
+  "alt": "قضايا الأحوال الشخصية"
+ },
+ {
+  "id": "srv2",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.28.18 PM (1).jpeg",
+  "alt": "قضايا الأسرة"
+ },
+ {
+  "id": "srv3",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.28.18 PM (2).jpeg",
+  "alt": "القضايا المدنية"
+ },
+ {
+  "id": "srv4",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.28.19 PM.jpeg",
+  "alt": "المنازعات والتعويضات"
+ },
+ {
+  "id": "srv5",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.28.19 PM (1).jpeg",
+  "alt": "تأسيس الشركات"
+ },
+ {
+  "id": "srv6",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.28.20 PM.jpeg",
+  "alt": "الشئون القانونية للشركات"
+ },
+ {
+  "id": "srv7",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.28.21 PM.jpeg",
+  "alt": "صياغة ومراجعة العقود"
+ },
+ {
+  "id": "srv8",
+  "src": "/assets/images/services/Our/WhatsApp Image 2026-08-12 at 6.33.11 PM.jpeg",
+  "alt": "تنفيذ الأحكام"
+ }
+]

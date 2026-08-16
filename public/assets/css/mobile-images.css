@@ -1,0 +1,233 @@
+/* ============================================
+   MOBILE IMAGE RESPONSIVE BEHAVIOR
+   All image groups should stack vertically on mobile (max-width: 767px)
+   ============================================ */
+
+/* ============================================
+   LOGO SIZING - HEADER LOGO
+   ============================================ */
+
+/* Desktop logo sizing (legacy post-5808 values) */
+.elementor-location-header .elementor-widget-image .elementor-widget-container .header-logo {
+    height: 50px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+}
+
+/* Mobile logo sizing */
+@media (max-width: 767px) {
+    .elementor-location-header .elementor-widget-image .elementor-widget-container .header-logo {
+        height: 38px;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+    .elementor-location-header .elementor-widget-image .elementor-widget-container .header-logo {
+        height: 32px;
+        width: auto;
+        max-width: 100px;
+    }
+}
+
+/* Very small mobile (375px) */
+@media (max-width: 375px) {
+    .elementor-location-header .elementor-widget-image .elementor-widget-container .header-logo {
+        height: 28px;
+        width: auto;
+        max-width: 90px;
+    }
+}
+
+/* ============================================
+   LOGO SIZING - FOOTER LOGO
+   ============================================ */
+
+/* Desktop footer logo */
+.elementor-location-footer .footer-logo {
+    height: 80px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Mobile footer logo (legacy post-5837 width) */
+@media (max-width: 767px) {
+    .elementor-location-footer .footer-logo {
+        width: 30%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+/* ============================================
+   IMAGE GROUPS - MOBILE ONLY
+   ============================================ */
+
+@media (max-width: 767px) {
+    /* ============================================
+       FLEX CONTAINERS WITH MULTIPLE IMAGES
+       ============================================ */
+    
+    /* Main rule: All flex containers with images should stack vertically */
+    .e-flex.e-con,
+    .e-flex.e-con-boxed.e-con,
+    .e-con-full.e-flex.e-con,
+    .e-con-boxed.e-flex.e-con,
+    .elementor-element[class*="e-flex"][class*="e-con"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    /* ============================================
+       IMAGE WIDGETS IN FLEX CONTAINERS
+       ============================================ */
+    
+    /* All image widgets in flex containers */
+    .e-flex.e-con > .elementor-widget-image,
+    .e-con-inner > .elementor-widget-image,
+    .e-con-full.e-flex.e-con > .elementor-widget-image,
+    .e-flex.e-con-boxed.e-con > .elementor-widget-image,
+    .e-con-boxed.e-flex.e-con > .elementor-widget-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 0 !important;
+        margin-inline: 0 !important;
+        flex: 0 0 100% !important;
+    }
+    
+    /* ============================================
+       IMAGES THEMSELVES
+       ============================================ */
+    
+    /* All images in elementor image widgets */
+    .elementor-widget-image img:not(.header-logo):not(.footer-logo) {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
+    /* ============================================
+       SPECIFIC CONTAINERS
+       ============================================ */
+    
+    /* whyus-row container */
+    .elementor-element-whyus-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+    }
+    
+    .elementor-element-whyus-row .elementor-widget-image {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* About us image containers */
+    .elementor-element-1fef3bb .e-con-inner,
+    .elementor-element-a0c87f0 .e-con-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+    }
+    
+    .elementor-element-1fef3bb .elementor-widget-image,
+    .elementor-element-a0c87f0 .elementor-widget-image {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Services page image containers */
+    .elementor-element-2c04e97,
+    .elementor-element-e8d301c,
+    .elementor-element-5370e43 {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+    }
+    
+    .elementor-element-2c04e97 .elementor-widget-image,
+    .elementor-element-e8d301c .elementor-widget-image,
+    .elementor-element-5370e43 .elementor-widget-image {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Service cards */
+    .elementor-element-srv1,
+    .elementor-element-srv2,
+    .elementor-element-srv3,
+    .elementor-element-srv4,
+    .elementor-element-srv5,
+    .elementor-element-srv6,
+    .elementor-element-srv7,
+    .elementor-element-srv8 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 16px !important;
+    }
+    
+    /* ============================================
+       CONTAINER PROPERTIES
+       ============================================ */
+    
+    /* Remove fixed heights and overflow restrictions */
+    .elementor-widget-image,
+    .elementor-widget-container {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    /* Ensure containers don't have horizontal overflow */
+    .e-con-inner,
+    .e-flex.e-con,
+    .e-con-full.e-flex.e-con {
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* ============================================
+       GRID CONTAINERS WITH IMAGES
+       ============================================ */
+    
+    /* If any grid containers have multiple images, make them column */
+    .e-con-inner[style*="grid"],
+    .e-flex.e-con[style*="grid"],
+    .e-con-full.e-flex.e-con[style*="grid"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ============================================
+   DESKTOP/TABLET - PRESERVE ORIGINAL LAYOUT
+   ============================================ */
+@media (min-width: 768px) {
+    /* Ensure desktop layout is preserved */
+    .e-flex.e-con[style*="flex-direction:row"] {
+        flex-direction: row !important;
+    }
+    
+    /* Preserve original image widths on desktop */
+    .elementor-widget-image {
+        width: auto !important;
+        max-width: 100%;
+    }
+    
+    .elementor-widget-image img:not(.header-logo):not(.footer-logo) {
+        width: auto !important;
+        max-width: 100%;
+        height: auto !important;
+    }
+}
