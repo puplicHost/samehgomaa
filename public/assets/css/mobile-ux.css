@@ -1,0 +1,373 @@
+/* ============================================
+   MOBILE UX LAYER
+   Deliberate responsive adaptations for mobile.
+   Desktop layout preserved (all rules scoped to media queries).
+   Brand/colors/fonts/content untouched.
+   ============================================ */
+
+/* ============================================
+   BASE: clear fixed header on mobile, natural stacking
+   ============================================ */
+@media (max-width: 767px) {
+  #app #main-container {
+    padding-top: 82px; /* below fixed mobile header bar */
+  }
+
+  /* Content rows that Elementor kept as ROW must stack on mobile.
+     Header (outside <main>) is excluded on purpose. */
+  main .e-con-inner,
+  .elementor-location-footer .e-con-inner,
+  .elementor-4777 .e-con-inner,
+  .elementor-4779 .e-con-inner,
+  .elementor-4781 .e-con-inner,
+  .elementor-4783 .e-con-inner {
+    flex-direction: column !important;
+  }
+
+  #main-container > main > .elementor > .e-con,
+  #main-container > main > .elementor .e-con.e-parent {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   HEADER (mobile): single compact row
+   logo … burger … CTA  (RTL: logo right)
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-location-header .e-con.e-parent .e-con-inner {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+
+  .elementor-location-header .e-con.e-parent .e-con-inner > .e-con-full {
+    flex-direction: row !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* nav widget sits between logo and CTA */
+  .elementor-location-header .elementor-widget-nav-menu .elementor-widget-container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* touch friendly burger */
+  .elementor-location-header .elementor-menu-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    font-size: 20px;
+    border-radius: 8px;
+  }
+
+  /* compact CTA — keep visible, don't inflate the bar */
+  .elementor-location-header .elementor-button {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+  }
+
+  /* dropdown hidden unless open */
+  .elementor-location-header .elementor-nav-menu--dropdown {
+    display: none;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown.elementor-active {
+    display: block;
+    position: fixed !important;
+    top: 78px !important;
+    right: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    border-radius: 0 0 12px 12px;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .elementor-nav-menu {
+    flex-direction: column;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .elementor-item {
+    padding: 16px 20px !important;
+  }
+}
+
+/* ============================================
+   HERO (home): natural vertical flow
+   Title → Subtitle → CTA → Image
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-element-aca3f87 {
+    padding-top: 10px !important;
+  }
+  .elementor-element-aca3f87 .e-con-inner {
+    align-items: center;
+    gap: 14px;
+  }
+  .elementor-element-1f87cf5 {
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+  .elementor-element-1f87cf5 .elementor-heading-title {
+    line-height: 1.35 !important;
+  }
+  .elementor-element-36a6815 {
+    width: min(100% - 32px, 340px) !important;
+    order: 5;
+  }
+  .elementor-element-36a6815 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+  }
+  .elementor-element-aca3f87 .elementor-button {
+    padding: 12px 26px !important;
+    font-size: 15px !important;
+  }
+}
+
+/* ============================================
+   STATS rows: fixed-height ROW → stacked cards on mobile
+   (wp-custom.css forces row; override here)
+   ============================================ */
+@media (max-width: 767px) {
+  main .elementor-element-1fef3bb .e-con-inner,
+  main .elementor-element-a0c87f0 .e-con-inner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+  .elementor-element-1fef3bb .e-con-inner .elementor-widget-image,
+  .elementor-element-a0c87f0 .e-con-inner .elementor-widget-image {
+    flex: 0 0 auto !important;
+    flex-basis: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+  .elementor-element-1fef3bb .e-con-inner .elementor-widget-image img,
+  .elementor-element-a0c87f0 .e-con-inner .elementor-widget-image img {
+    height: auto !important;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .elementor-element-1fef3bb .e-con-inner .elementor-widget-image:first-child,
+  .elementor-element-a0c87f0 .e-con-inner .elementor-widget-image:first-child {
+    display: none; /* duplicate intro card, kept on desktop */
+  }
+}
+
+/* ============================================
+   WHY US row: fixed 420px row → stacked
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-element-whyus-row {
+    height: auto !important;
+  }
+  .elementor-element-whyus-row .elementor-widget-image {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .elementor-element-whyus-row .elementor-widget-image img {
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+/* ============================================
+   TESTIMONIALS: stacked cards, comfortable reading
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-element-b1b3e53 {
+    gap: 18px !important;
+  }
+  .elementor-element-b1b3e53 .testimonial-card {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+}
+
+/* ============================================
+   SERVICES grids / cards: full-width stacked
+   ============================================ */
+@media (max-width: 767px) {
+  /* services page grids: intended 2-col cards (css grid beats flex-wrap fights) */
+  .elementor-element-2c04e97 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 17px !important;
+    justify-content: stretch !important;
+    align-items: stretch !important;
+  }
+  .elementor-element-2c04e97 > .elementor-widget-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    margin-bottom: 0 !important;
+  }
+  .e-con.elementor-element-e8d301c > .e-con-inner > .elementor-widget-image,
+  .e-con.elementor-element-5370e43 > .e-con-inner > .elementor-widget-image {
+    width: calc(50% - 9.5px) !important;
+    max-width: calc(50% - 9.5px) !important;
+    flex: 0 0 calc(50% - 9.5px) !important;
+    min-width: 0 !important;
+  }
+  /* home services: portrait posters become wide cards */
+  .elementor-element-73ac407 img,
+  .elementor-element-69067d0 img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+  }
+}
+
+/* ============================================
+   LIGHTBOX (services): fit screen, controls reachable
+   ============================================ */
+@media (max-width: 767px) {
+  .service-lightbox figure {
+    width: calc(100% - 70px);
+    max-width: 100%;
+  }
+  .service-lightbox-img {
+    max-height: 70dvh !important;
+    object-fit: contain;
+  }
+  .service-lightbox-caption {
+    font-size: 14px;
+  }
+  .service-lightbox-close {
+    width: 44px;
+    height: 44px;
+  }
+  .service-lightbox-nav {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ============================================
+   CONSULTATION CTA: full-width, tappable
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-element-54f72cb { /* home consultation CTA */
+    text-align: center;
+  }
+  .elementor-element-54f72cb .elementor-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 20px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* ============================================
+   FAQ: comfortable touch padding, icon clear of Arabic text
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-4781 .elementor-tab-title,
+  .elementor-4769 .elementor-tab-title {
+    padding: 16px 14px !important;
+  }
+  .elementor-4781 .elementor-tab-title .elementor-accordion-title,
+  .elementor-4769 .elementor-tab-title .elementor-accordion-title {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+  .elementor-4781 .elementor-tab-content,
+  .elementor-4769 .elementor-tab-content {
+    padding: 14px !important;
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+  }
+}
+
+/* ============================================
+   ABOUT sections: image/text stack without gaps
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-4777 .e-con-full.e-flex.e-con {
+    gap: 16px !important;
+  }
+  .elementor-4777 .elementor-widget-image img {
+    width: 100%;
+    height: auto;
+  }
+  .elementor-4777 .video-wrapper iframe {
+    height: 210px !important;
+  }
+}
+
+/* ============================================
+   CONTACT page: content fits, inputs full width
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-4783 .e-con-inner {
+    gap: 20px;
+  }
+  .elementor-4783 input,
+  .elementor-4783 select,
+  .elementor-4783 textarea,
+  .elementor-4783 .elementor-field {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .elementor-4783 .elementor-widget-google_maps iframe,
+  .elementor-4783 iframe {
+    width: 100% !important;
+    max-width: 100%;
+    height: 320px;
+  }
+}
+
+/* ============================================
+   FOOTER: stacked columns, compact logo
+   ============================================ */
+@media (max-width: 767px) {
+  .elementor-location-footer .e-con-inner {
+    gap: 28px !important;
+  }
+  .elementor-location-footer .e-con-full.e-flex.e-con {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .elementor-location-footer .elementor-widget-nav-menu .elementor-nav-menu,
+  .elementor-location-footer .elementor-icon-list-items,
+  .elementor-location-footer .elementor-social-icons-wrapper {
+    justify-content: center !important;
+  }
+}
+
+/* ============================================
+   WHATSAPP button: smaller, safe distance on mobile
+   ============================================ */
+@media (max-width: 767px) {
+  .whatsapp-float-button {
+    width: 52px !important;
+    height: 52px !important;
+    bottom: 14px !important;
+    inset-inline-end: 14px !important;
+  }
+  .whatsapp-float-button svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ============================================
+   Media: video / iframe never overflow
+   ============================================ */
+@media (max-width: 767px) {
+  main iframe,
+  main video,
+  main object {
+    max-width: 100% !important;
+  }
+}
