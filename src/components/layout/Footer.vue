@@ -129,6 +129,11 @@
     </div>
     <div class="elementor-element elementor-element-943cbd8 e-grid e-con-boxed e-con e-parent" data-id="943cbd8" data-element_type="container" data-e-type="container">
       <div class="e-con-inner">
+        <div class="elementor-element elementor-element-b575eeb elementor-widget elementor-widget-text-editor" data-id="b575eeb" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+            <p>جميع الحقوق محفوظة لمؤسسة المستشار رامي شريف 2026 © ramisharif.com</p>
+          </div>
+        </div>
         <div class="elementor-element elementor-element-4a67104 elementor-nav-menu__align-center elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="4a67104" data-element_type="widget" data-e-type="widget" data-widget_type="nav-menu.default">
           <div class="elementor-widget-container">
             <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
@@ -138,11 +143,6 @@
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6869"><a href="https://ramisharif.com/?page_id=6851" class="elementor-item">الشروط والأحكام</a></li>
               </ul>
             </nav>
-          </div>
-        </div>
-        <div class="elementor-element elementor-element-b575eeb elementor-widget elementor-widget-text-editor" data-id="b575eeb" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-          <div class="elementor-widget-container">
-            <p>جميع الحقوق محفوظة لمؤسسة المستشار رامي شريف 2026 © ramisharif.com</p>
           </div>
         </div>
       </div>
