@@ -3,8 +3,12 @@
     <Container>
       <SectionHeading title="قيمنا التي نؤمن بها" align="center" class="mb-12" />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div v-for="value in values" :key="value.title" class="bg-white rounded-2xl p-6 shadow-testimonial hover:shadow-lg transition-shadow duration-300">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          v-for="value in values"
+          :key="value.title"
+          class="bg-white rounded-2xl p-6 md:p-8 shadow-testimonial border-t-4 border-transparent hover:border-gold hover:-translate-y-1 hover:shadow-gold transition-all duration-300"
+        >
           <ValueCard
             :icon="value.icon"
             :title="value.title"

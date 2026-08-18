@@ -1,38 +1,50 @@
 <template>
   <section class="section-padding">
     <Container>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div class="text-center bg-cream rounded-2xl p-8 shadow-testimonial">
-          <img
-            src="/assets/images/wp-content/uploads/2024/07/vis.webp"
-            alt="رؤية المؤسسة"
-            loading="lazy"
-            class="w-28 h-28 mx-auto mb-6 rounded-2xl object-contain"
-          >
+      <SectionHeading title="رؤيتنا ورسالتنا" class="mb-12" />
 
-          <h2 class="text-2xl md:text-3xl font-semibold text-ink mb-4">
-            رؤية المؤسسة
-          </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="group relative bg-cream rounded-2xl p-8 md:p-10 shadow-testimonial border-t-4 border-gold hover:shadow-gold hover:-translate-y-1 transition-all duration-300 overflow-hidden text-center">
+          <div
+            aria-hidden="true"
+            class="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-gold/10 blur-2xl group-hover:bg-gold/20 transition-colors duration-300 pointer-events-none"
+          ></div>
 
-          <p class="text-base md:text-lg text-ink-light leading-relaxed">
-            نسعى إلى أن نكون من المؤسسات القانونية الرائدة في تقديم خدمات قانونية موثوقة ومتكاملة للأفراد والشركات. نسعى إلى حماية حقوق عملائنا وتحقيق أفضل النتائج القانونية الممكنة. نلتزم بتقديم حلول عملية قائمة على الخبرة والدراسة الدقيقة لكل قضية. ونطمح إلى بناء علاقات مستدامة مع عملائنا أساسها الثقة والاحترافية والشفافية.
+          <div class="relative inline-flex w-24 h-24 items-center justify-center rounded-2xl bg-white border border-gold/25 shadow-testimonial mb-6 group-hover:scale-105 transition-transform duration-300">
+            <img
+              src="/assets/images/wp-content/uploads/2024/07/vis.webp"
+              alt="رؤية المؤسسة"
+              loading="lazy"
+              class="w-16 h-16 object-contain"
+            >
+          </div>
+
+          <h3 class="relative text-2xl md:text-3xl font-semibold text-ink mb-4">رؤية المؤسسة</h3>
+
+          <p class="relative text-base md:text-lg text-ink-light leading-relaxed">
+            نسعى إلى أن نكون من المؤسسات القانونية الرائدة في تقديم خدمات قانونية موثوقة ومتكاملة للأفراد والشركات، وحماية حقوق عملائنا وتحقيق أفضل النتائج القانونية الممكنة عبر حلول عملية قائمة على الخبرة والدراسة الدقيقة، وبناء علاقات مستدامة أساسها الثقة والاحترافية والشفافية.
           </p>
         </div>
 
-        <div class="text-center bg-cream rounded-2xl p-8 shadow-testimonial">
-          <img
-            src="/assets/images/wp-content/uploads/2024/07/miss.webp"
-            alt="رسالة المؤسسة"
-            loading="lazy"
-            class="w-28 h-28 mx-auto mb-6 rounded-2xl object-contain"
-          >
+        <div class="group relative bg-cream rounded-2xl p-8 md:p-10 shadow-testimonial border-t-4 border-gold hover:shadow-gold hover:-translate-y-1 transition-all duration-300 overflow-hidden text-center">
+          <div
+            aria-hidden="true"
+            class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gold/10 blur-2xl group-hover:bg-gold/20 transition-colors duration-300 pointer-events-none"
+          ></div>
 
-          <h2 class="text-2xl md:text-3xl font-semibold text-ink mb-4">
-            رسالة المؤسسة
-          </h2>
+          <div class="relative inline-flex w-24 h-24 items-center justify-center rounded-2xl bg-white border border-gold/25 shadow-testimonial mb-6 group-hover:scale-105 transition-transform duration-300">
+            <img
+              src="/assets/images/wp-content/uploads/2024/07/miss.webp"
+              alt="رسالة المؤسسة"
+              loading="lazy"
+              class="w-16 h-16 object-contain"
+            >
+          </div>
 
-          <p class="text-base md:text-lg text-ink-light leading-relaxed">
-            تقديم خدمات واستشارات قانونية متكاملة للأفراد والشركات بأعلى درجات المهنية والدقة. نعمل على حماية حقوق عملائنا ومصالحهم من خلال حلول قانونية عملية ومدروسة. نلتزم بالسرية والشفافية والمتابعة الجادة في جميع مراحل العمل القانوني. ونسعى إلى تحقيق أفضل النتائج الممكنة وبناء علاقة دائمة قائمة على الثقة والاحترافية.
+          <h3 class="relative text-2xl md:text-3xl font-semibold text-ink mb-4">رسالة المؤسسة</h3>
+
+          <p class="relative text-base md:text-lg text-ink-light leading-relaxed">
+            تقديم خدمات واستشارات قانونية متكاملة للأفراد والشركات بأعلى درجات المهنية والدقة، وحماية حقوق عملائنا ومصالحهم من خلال حلول قانونية عملية ومدروسة، مع الالتزام بالسرية والشفافية والمتابعة الجادة في جميع مراحل العمل القانوني.
           </p>
         </div>
       </div>
@@ -42,4 +54,5 @@
 
 <script setup>
 import Container from '../common/Container.vue'
+import SectionHeading from '../common/SectionHeading.vue'
 </script>
