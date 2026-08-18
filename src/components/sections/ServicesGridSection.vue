@@ -1,11 +1,20 @@
 <template>
-  <section class="section-padding bg-cream">
+  <section id="services-grid" class="section-padding bg-cream scroll-mt-24">
     <Container>
-      <SectionHeading title="خدمات المؤسسة" align="center" class="mb-12" />
+      <SectionHeading
+        title="خدمات المؤسسة"
+        align="center"
+        subtitle="اضغط على صورة أي خدمة لعرضها بالحجم الكامل، أو تواصل معنا مباشرة لحجزها"
+        class="mb-12"
+      />
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <div v-for="(service, index) in services" :key="service.id" class="bg-white rounded-2xl p-4 shadow-testimonial hover:shadow-lg transition-shadow duration-300">
-          <div class="relative group cursor-pointer overflow-hidden rounded-xl" @click="openLightbox(index)">
+        <article
+          v-for="(service, index) in services"
+          :key="service.id"
+          class="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-testimonial border-t-4 border-transparent hover:border-gold hover:shadow-gold hover:-translate-y-1 transition-all duration-300"
+        >
+          <div class="relative cursor-pointer overflow-hidden" @click="openLightbox(index)">
             <img
               :src="service.src"
               :alt="service.alt"
@@ -19,10 +28,30 @@
                 </svg>
               </div>
             </div>
+            <span
+              aria-hidden="true"
+              class="absolute top-3 right-3 w-9 h-9 rounded-full bg-gold text-white flex items-center justify-center text-xs font-bold shadow-gold"
+            >
+              {{ String(index + 1).padStart(2, '0') }}
+            </span>
           </div>
 
-          <p class="text-center mt-3 text-ink font-medium">{{ service.alt }}</p>
-        </div>
+          <div class="flex flex-col flex-1 p-5">
+            <h3 class="text-center text-lg md:text-xl font-semibold text-ink mb-4">
+              {{ service.alt }}
+            </h3>
+
+            <a
+              :href="whatsappLink(service.alt)"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto inline-flex items-center justify-center gap-2 rounded-lg border-2 border-gold text-gold px-4 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-gold hover:text-white focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
+            >
+              <Icon icon="simple-icons:whatsapp" class="w-4 h-4" aria-hidden="true" />
+              اطلب الخدمة
+            </a>
+          </div>
+        </article>
       </div>
 
       <div class="text-center">
@@ -43,6 +72,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { Icon } from '@iconify/vue'
 import Container from '../common/Container.vue'
 import SectionHeading from '../common/SectionHeading.vue'
 import Button from '../common/Button.vue'
@@ -53,5 +83,9 @@ const lightboxIndex = ref(-1)
 
 function openLightbox(index) {
   lightboxIndex.value = index
+}
+
+function whatsappLink(title) {
+  return 'https://wa.me/201111904997?text=' + encodeURIComponent(`مرحبًا، أرغب في حجز "${title}". هل يمكن معرفة المواعيد المتاحة؟`)
 }
 </script>
