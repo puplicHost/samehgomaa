@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full space-y-3">
     <AccordionItem
       v-for="(item, index) in items"
       :key="item.id || index"
