@@ -97,42 +97,6 @@
 }
 
 /* ============================================
-   HERO (home): natural vertical flow
-   Title → Subtitle → CTA → Image
-   ============================================ */
-@media (max-width: 767px) {
-  .elementor-element-aca3f87 {
-    padding-top: 10px !important;
-  }
-  .elementor-element-aca3f87 .e-con-inner {
-    align-items: center;
-    gap: 14px;
-  }
-  .elementor-element-1f87cf5 {
-    align-items: center !important;
-    text-align: center !important;
-    gap: 10px !important;
-  }
-  .elementor-element-1f87cf5 .elementor-heading-title {
-    line-height: 1.35 !important;
-  }
-  .elementor-element-36a6815 {
-    width: min(100% - 32px, 340px) !important;
-    order: 5;
-  }
-  .elementor-element-36a6815 img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 20px;
-  }
-  .elementor-element-aca3f87 .elementor-button {
-    padding: 12px 26px !important;
-    font-size: 15px !important;
-  }
-}
-
-/* ============================================
    STATS rows: fixed-height ROW → stacked cards on mobile
    (wp-custom.css forces row; override here)
    ============================================ */

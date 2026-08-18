@@ -1,8 +1,8 @@
 <template>
   <div id="main-container">
-    <a class="skip-link screen-reader-text" href="#main">التجاوز إلى المحتوى</a>
+    <a class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-2 focus:right-2 focus:z-[10002] focus:bg-ink focus:text-gold focus:px-4 focus:py-2 focus:rounded" href="#main">التجاوز إلى المحتوى</a>
     <SiteHeader />
-    <main id="main" class="site-main hfeed">
+    <main id="main" class="site-main">
       <RouterView />
     </main>
     <SiteFooter />

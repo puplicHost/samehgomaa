@@ -1,9 +1,11 @@
 <template>
-  <ContactHero />
-  <ContactInfo />
+  <div>
+    <ContactHero />
+    <ContactInfo />
+  </div>
 </template>
 
 <script setup>
-import ContactHero from '../components/contacts/ContactHero.vue'
-import ContactInfo from '../components/contacts/ContactInfo.vue'
+import ContactHero from '../components/sections/ContactHero.vue'
+import ContactInfo from '../components/sections/ContactInfo.vue'
 </script>
